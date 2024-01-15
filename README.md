@@ -1,5 +1,6 @@
 # Welcome to Safarly: Your Gateway to Exploring Libya's Hidden Gems!
-## **Safarly** is a travel website designed to empower Libyan tourism by enabling users to seamlessly book hotels and explore captivating destinations within the country.
+## **Safarly**
+is a travel website designed to empower Libyan tourism by enabling users to seamlessly book hotels and explore captivating destinations within the country.
 ### **Our Mission:**
 To break down travel barriers and showcase the beauty and richness of Libya, making it a more accessible and desirable tourist destination.
 ### **Our Goal:**
