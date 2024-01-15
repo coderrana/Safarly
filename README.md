@@ -1,3 +1,4 @@
+Sofian Marcit
 # Welcome to Safarly: Your Gateway to Exploring Libya's Hidden Gems
 ## Safarly
 Safarly is a travel website designed to empower Libyan tourism by enabling users to seamlessly book hotels and explore captivating destinations within the country.
