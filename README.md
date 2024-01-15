@@ -1,5 +1,5 @@
-Sofian Marcit
-Rana Elosta 
+* Sofian Marcit
+* Rana Elosta 
 
 # Welcome to Safarly: Your Gateway to Exploring Libya's Hidden Gems
 ## Safarly
