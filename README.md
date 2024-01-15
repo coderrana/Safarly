@@ -5,9 +5,9 @@ Safarly is a travel website designed to empower Libyan tourism by enabling users
 To break down travel barriers and showcase the beauty and richness of Libya, making it a more accessible and desirable tourist destination.
 ### **Our Goal:**
 Become the go-to platform for hotel booking in Libya, Offering:
-**Seamless Hotel Booking:** Browse and reserve your perfect stay across diverse Libyan cities. Our carefully curated selection caters to every budget and travel style.
-**Insider Knowledge:** Our team of local experts shares insights and tips to navigate your Libyan adventure. Our blog brims with stories, recommendations, and practical advice to ensure a smooth and unforgettable journey.
-**Contribute to Libya's economic growth:** Support the development of the tourism sector, creating job opportunities and boosting local businesses.
+* **Seamless Hotel Booking:** Browse and reserve your perfect stay across diverse Libyan cities. Our carefully curated selection caters to every budget and travel style.
+* **Insider Knowledge:** Our team of local experts shares insights and tips to navigate your Libyan adventure. Our blog brims with stories, recommendations, and practical advice to ensure a smooth and unforgettable journey.
+* **Contribute to Libya's economic growth:** Support the development of the tourism sector, creating job opportunities and boosting local businesses.
 
 ### **Join the Safarly Community:**
 Safarly is more than just a website; it's a community of passionate travelers eager to explore the uncharted corners of Libya. Join us on:
