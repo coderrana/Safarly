@@ -1,0 +1,298 @@
+/* Basic Reset */body, h1, h2, p, ul {
+    margin: 0;    padding: 0;
+    font-family: Arial, sans-serif;}
+/* Header Styles */
+header {    background-color: #007BFF;
+    color: white;    padding: 10px 0;
+}
+header .container {    width: 90%;
+    margin: auto;    display: flex;
+    justify-content: space-between;    align-items: center;
+}
+header h1 {    margin: 0;
+}
+nav ul {
+    list-style: none;    display: flex;
+}
+nav ul li {    margin-left: 20px;
+}
+nav a {
+    color: white;    text-decoration: none;
+}
+.registerBtn {    background-color: #4CAF50;
+    color: white;    border: none;
+    padding: 10px 15px;    cursor: pointer;
+    border-radius: 5px;}
+.registerBtn:hover {
+    background-color: #45a049;}
+/* Hero Section Styles */
+#hero {    background-color: #EFEFEF;
+    padding: 50px 0;    text-align: center;
+}
+#hero h2 {    margin-bottom: 10px;
+}
+#hero p {
+    font-size: 1.2em;}
+/* Other Sections */
+section {
+    padding: 50px 0;}
+.container {
+    width: 90%;    margin: auto;
+}
+/* Footer Styles */
+footer {    background-color: #333;
+    color: white;
+    text-align: center;    padding: 10px 0;
+}
+/* Modal Styles */.modal {
+    display: none; /* Hidden by default */    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */    left: 0;
+    top: 0;    width: 100%; /* Full width */
+    height: 100%; /* Full height */    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */    padding: 20px;
+    border: 1px solid #888;    width: 80%; /* Could be more or less, depending on screen size */
+}
+.close {    color: #aaa;
+    float: right;    font-size: 28px;
+    font-weight: bold;}
+.close:hover,
+.close:focus {    color: black;
+    text-decoration: none;    cursor: pointer;
+}
+/* Styling form inside modal */#registerForm input[type=text],
+#registerForm input[type=email],#registerForm input[type=password] {
+    width: 100%;    padding: 12px 20px;
+    margin: 8px 0;    display: inline-block;
+    border: 1px solid #ccc;    box-sizing: border-box;
+}
+#registerForm button {    background-color: #4CAF50;
+    color: white;    padding: 14px 20px;
+    margin: 8px 0;    border: none;
+    cursor: pointer;    width: 100%;
+}
+#registerForm button:hover {
+    opacity: 0.8;}
+    
+    
+    
+    
+    
+/* Style for the container of the forms */
+div {
+    margin: 20px;
+    padding: 20000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: auto;
+    background-color: #f9f9f9;
+}
+
+/* General style for input fields */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+/* Style for buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+    padding: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #adeeff;
+}
+
+.registerBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.registerBtn:hover {
+    background-color: #45a049;
+}
+
+/* Hero Section Styles */
+#hero {
+    background-color: #f2f2f2;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#hero h2 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#hero p {
+    font-size: 1.2em;
+}
+
+/* Other Sections */
+section {
+    padding: 50px 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styling form inside modal */
+#registerForm input[type=text],
+#registerForm input[type=email],
+#registerForm input[type=password],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border 0.3s ease-in-out;
+}
+
+#registerForm button,
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#registerForm button:hover,
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Placeholder styling */
+:placeholder {
+    color: #aaa;
+}
+
+/* Focus style for input fields */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+.search {
+    text-align: center;
+    padding: 20px;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.results {
+    margin: 20px;
+}
+
+.hotel-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
