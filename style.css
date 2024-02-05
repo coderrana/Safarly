@@ -75,11 +75,11 @@ footer {    background-color: #333;
 }
 #registerForm button:hover {
     opacity: 0.8;}
-    
-    
-    
-    
-    
+
+
+
+
+
 /* Style for the container of the forms */
 div {
     margin: 20px;
@@ -289,10 +289,4 @@ button {
 
 .results {
     margin: 20px;
-}
-
-.hotel-item {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
 }
