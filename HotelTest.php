@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once 'C:\Users\dell\Desktop\github\Safarly\Hotel.php';
+require_once 'Hotel.php';
 
 class HotelTest extends TestCase {
     public function testHotelCanReceiveARating() {
