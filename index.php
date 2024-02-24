@@ -12,17 +12,60 @@ $hotelManager = new HotelManager();
 switch ($action) {
     case 'register':
         // Example: Process registration
-        // You would retrieve $_POST['username'], $_POST['email'], $_POST['password'] here
+        $username = $_POST['username'] ?? null;
+        $email = $_POST['email'] ?? null;
+        $password = $_POST['password'] ?? null;
+
+        if ($username && $email && $password) {
+            $result = $userManager->registerUser($username, $email, $password);
+            if ($result) {
+                echo "Registration successful. Please log in.";
+            } else {
+                echo "Registration failed. Please try again.";
+            }
+        } else {
+            echo "Please fill in all required fields.";
+        }
         break;
     case 'login':
         // Example: Process login
-        // You would retrieve $_POST['email'], $_POST['password'] here
+        $email = $_POST['email'] ?? null;
+        $password = $_POST['password'] ?? null;
+
+        if ($email && $password) {
+            $result = $userManager->loginUser($email, $password);
+            if ($result) {
+                echo "Login successful. Welcome back!";
+            } else {
+                echo "Login failed. Please check your credentials.";
+            }
+        } else {
+            echo "Please fill in all required fields.";
+        }
         break;
     case 'searchHotels':
         // Example: Process hotel search
-        // You would retrieve $_GET['searchInput'] or $_POST['searchInput'] here
+        $searchInput = $_GET['searchInput'] ?? $_POST['searchInput'] ?? null;
+
+        if ($searchInput) {
+            $hotels = $hotelManager->searchHotels($searchInput);
+            if (!empty($hotels)) {
+                foreach ($hotels as $hotel) {
+                    // Assuming $hotel is an array or object with accessible properties. Adjust as necessary.
+                    echo "Hotel Name: " . $hotel->name . "<br>";
+                    echo "Location: " . $hotel->location . "<br>";
+                    echo "Price: " . $hotel->price . "<br><br>";
+                }
+            } else {
+                echo "No hotels found matching your search criteria.";
+            }
+        } else {
+            echo "Please enter search criteria.";
+        }
         break;
     default:
         echo "Welcome to our hotel booking site!";
         break;
 }
+
+?>
