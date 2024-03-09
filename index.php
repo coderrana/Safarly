@@ -51,7 +51,7 @@ switch ($action) {
             $hotels = $hotelManager->searchHotels($searchInput);
             if (!empty($hotels)) {
                 foreach ($hotels as $hotel) {
-                    // Assuming $hotel is an array or object with accessible properties. Adjust as necessary.
+                    // $hotel is an array or object with accessible properties. Adjust as necessary.
                     echo "Hotel Name: " . $hotel->name . "<br>";
                     echo "Location: " . $hotel->location . "<br>";
                     echo "Price: " . $hotel->price . "<br><br>";
@@ -67,5 +67,3 @@ switch ($action) {
         echo "Welcome to our hotel booking site!";
         break;
 }
-
-?>

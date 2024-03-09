@@ -20,4 +20,21 @@ class HotelManager {
 
         return array_values($filteredHotels);
     }
+    class HotelManager {
+        // Existing methods
+    
+        private $travelBlogManager;
+    
+        public function __construct(TravelBlogManager $travelBlogManager) {
+            $this->travelBlogManager = $travelBlogManager;
+        }
+    
+        public function addTravelBlog(TravelBlog $blog) {
+            $this->travelBlogManager->addTravelBlog($blog);
+        }
+    
+        public function getTravelBlogs() {
+            return $this->travelBlogManager->getTravelBlogs();
+        }
+    }
 }

@@ -5,6 +5,7 @@ class Hotel {
     public $location;
     public $price;
      public $ratings = [];
+     private $travelBlogs = [];
 
     public function __construct($name, $location, $price) {
         $this->name = $name;
@@ -26,9 +27,19 @@ public function getAverageRating() {
     return round(array_sum($this->ratings) / count($this->ratings), 2);
 }
 
+<<<<<<< HEAD
+    public function addTravelBlog(TravelBlog $blog) {
+        $this->travelBlogs[] = $blog;
+    }
+
+    public function getTravelBlogs() {
+        return $this->travelBlogs;
+    }
+=======
 public function getDynamicPrice(Book $book) {
     $bookingManager = new BookingManager();
     return $bookingManager->calculateDynamicPrice($book);
 }
+>>>>>>> 29bb44b9c6671331d2202cd1e5b3f026bb116c6f
 
 }
