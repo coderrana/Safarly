@@ -3,11 +3,34 @@
 require_once 'UserManager.php';
 require_once 'HotelManager.php';
 
+class BookingFacade {
+    private $userManager;
+    private $hotelManager;
+
+    public function __construct(UserManager $userManager, HotelManager $hotelManager) {
+        $this->userManager = $userManager;
+        $this->hotelManager = $hotelManager;
+    }
+
+    public function registerUserFacade($username, $email, $password) {
+        return $this->userManager->registerUserFacade($username, $email, $password);
+    }
+
+    public function loginUserFacade($email, $password) {
+        return $this->userManager->loginUser($email, $password);
+    }
+
+    public function searchHotelsFacade($searchInput) {
+        return $this->hotelManager->searchHotels($searchInput);
+    }
+}
+
 // Simple router logic
 $action = $_GET['action'] ?? 'home';
 
 $userManager = new UserManager();
 $hotelManager = new HotelManager();
+$bookingFacade = new BookingFacade($userManager, $hotelManager);
 
 switch ($action) {
     case 'register':
@@ -17,12 +40,8 @@ switch ($action) {
         $password = $_POST['password'] ?? null;
 
         if ($username && $email && $password) {
-            $result = $userManager->registerUser($username, $email, $password);
-            if ($result) {
-                echo "Registration successful. Please log in.";
-            } else {
-                echo "Registration failed. Please try again.";
-            }
+            $result = $bookingFacade->registerUserFacade($username, $email, $password);
+            echo $result;
         } else {
             echo "Please fill in all required fields.";
         }
@@ -33,12 +52,8 @@ switch ($action) {
         $password = $_POST['password'] ?? null;
 
         if ($email && $password) {
-            $result = $userManager->loginUser($email, $password);
-            if ($result) {
-                echo "Login successful. Welcome back!";
-            } else {
-                echo "Login failed. Please check your credentials.";
-            }
+            $result = $bookingFacade->loginUserFacade($email, $password);
+            echo $result;
         } else {
             echo "Please fill in all required fields.";
         }
@@ -48,7 +63,7 @@ switch ($action) {
         $searchInput = $_GET['searchInput'] ?? $_POST['searchInput'] ?? null;
 
         if ($searchInput) {
-            $hotels = $hotelManager->searchHotels($searchInput);
+            $hotels = $bookingFacade->searchHotelsFacade($searchInput);
             if (!empty($hotels)) {
                 foreach ($hotels as $hotel) {
                     // $hotel is an array or object with accessible properties. Adjust as necessary.
@@ -67,3 +82,5 @@ switch ($action) {
         echo "Welcome to our hotel booking site!";
         break;
 }
+
+?>
