@@ -25,4 +25,10 @@ public function getAverageRating() {
     }
     return round(array_sum($this->ratings) / count($this->ratings), 2);
 }
+
+public function getDynamicPrice(Book $book) {
+    $bookingManager = new BookingManager();
+    return $bookingManager->calculateDynamicPrice($book);
+}
+
 }
