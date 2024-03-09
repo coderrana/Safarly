@@ -1,5 +1,8 @@
 <?php
 
+//design
+
+
 require_once 'UserManager.php';
 require_once 'HotelManager.php';
 
