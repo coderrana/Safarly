@@ -22,15 +22,28 @@ class UserManager {
         file_put_contents($this->dataFile, serialize($this->users));
     }
 
-    public function registerUser($username, $email, $password) {
-        foreach ($this->users as $user) {
-            if ($user->email === $email) {
-                return "Email already exists.";
+    public function registerUserFacade($username, $email, $password) {
+        try {
+            // Validate user data and perform registration logic
+            $this->validateUserData($username, $email, $password);
+
+            // Check if the email already exists
+            foreach ($this->users as $user) {
+                if ($user->email === $email) {
+                    throw new Exception("Email already exists.");
+                }
             }
+
+            // Register the user
+            $this->users[] = new User($username, $email, $password);
+            $this->saveUsers();
+
+            // Display success message
+            return "User registered successfully!";
+        } catch (Exception $e) {
+            // Handle the error gracefully
+            return 'Error: ' . $e->getMessage();
         }
-        $this->users[] = new User($username, $email, $password);
-        $this->saveUsers();
-        return "User registered successfully!";
     }
 
     public function loginUser($email, $password) {
@@ -40,5 +53,14 @@ class UserManager {
             }
         }
         return "Invalid email or password!";
+    }
+
+    private function validateUserData($username, $email, $password) {
+        // Implement your validation logic here (e.g., check if the username is unique, validate email format, etc.)
+        if (empty($username) || empty($email) || empty($password)) {
+            throw new Exception("Invalid user data provided.");
+        }
+
+        // You can add more validation checks as needed
     }
 }
