@@ -1,4 +1,5 @@
 <?php
+// design pattern applied
 
 class BookingManager {
     private $bookings = [];
@@ -13,41 +14,54 @@ class BookingManager {
     public function getBookings() {
         return $this->bookings;
     }
-}
 
-public function calculateDynamicPrice(Book $book) {
-    $baseRate = $this->getBaseRate(); // Replace with your actual base rate logic
-    $duration = $this->calculateDuration($book->getCheckInDate(), $book->getCheckOutDate());
+    public function bookRoom($hotelId, $userId, $checkInDate, $checkOutDate) {
+        try {
+            // Create a new Booking object
+            $booking = new Booking($hotelId, $userId, $checkInDate, $checkOutDate);
 
-    // You can add more factors and adjust the pricing logic as needed
-    $finalPrice = $baseRate * $duration;
+            // Add the booking to the BookingManager
+            $this->addBooking($booking);
 
-    // Apply any ongoing promotions or discounts
-    $finalPrice = $this->applyPromotions($finalPrice);
+            // Additional booking logic...
 
-    return $finalPrice;
-}
+            // Display success message or redirect
+            return 'Booking successful!';
+        } catch (Exception $e) {
+            // Handle the error gracefully
+            return 'Error: ' . $e->getMessage();
+        }
+    }
 
-private function getBaseRate() {
-    // Replace with your actual base rate retrieval logic
-    return 100; // Example base rate
-}
+    public function calculateDynamicPrice(Book $book) {
+        // Your existing dynamic pricing logic goes here
+        $baseRate = $this->getBaseRate();
+        $duration = $this->calculateDuration($book->getCheckInDate(), $book->getCheckOutDate());
+        $finalPrice = $baseRate * $duration;
+        $finalPrice = $this->applyPromotions($finalPrice);
 
-private function calculateDuration($checkInDate, $checkOutDate) {
-    // Replace with your actual duration calculation logic
-    $startDate = new DateTime($checkInDate);
-    $endDate = new DateTime($checkOutDate);
-    $interval = $startDate->diff($endDate);
+        return $finalPrice;
+    }
 
-    return $interval->days;
-}
+    private function getBaseRate() {
+        // Your existing base rate retrieval logic goes here
+        return 100; // Example base rate
+    }
 
-private function applyPromotions($price) {
-    // Replace with your actual promotion or discount logic
-    $discountPercentage = 10; // Example discount
-    $discount = ($discountPercentage / 100) * $price;
+    private function calculateDuration($checkInDate, $checkOutDate) {
+        // Your existing duration calculation logic goes here
+        $startDate = new DateTime($checkInDate);
+        $endDate = new DateTime($checkOutDate);
+        $interval = $startDate->diff($endDate);
 
-    return $price - $discount;
-}
+        return $interval->days;
+    }
 
+    private function applyPromotions($price) {
+        // Your existing promotion or discount logic goes here
+        $discountPercentage = 10; // Example discount
+        $discount = ($discountPercentage / 100) * $price;
+
+        return $price - $discount;
+    }
 }

@@ -1,5 +1,7 @@
 <?php
 
+// design applied
+
 class Hotel {
     public $name;
     public $location;
@@ -35,8 +37,22 @@ class Hotel {
         return $this->travelBlogs;
     }
 
-    public function bookRoomFacade($hotelId, $userId, $checkInDate, $checkOutDate) {
-        $bookingFacade = new BookingFacade($hotelId, $userId, $checkInDate, $checkOutDate);
-        $bookingFacade->bookRoom();
+    public function bookRoomFacade($userId, $checkInDate, $checkOutDate) {
+        try {
+            // Create a new Booking object
+            $booking = new Booking($this->name, $userId, $checkInDate, $checkOutDate);
+
+            // Add the booking to the BookingManager
+            $bookingManager = new BookingManager();
+            $bookingManager->addBooking($booking);
+
+            // Additional booking logic...
+
+            // Display success message or redirect
+            return 'Booking successful!';
+        } catch (Exception $e) {
+            // Handle the error gracefully
+            return 'Error: ' . $e->getMessage();
+        }
     }
 }
