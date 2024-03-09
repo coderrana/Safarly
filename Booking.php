@@ -17,4 +17,12 @@ class Booking {
         $this->checkInDate = $checkInDate;
         $this->checkOutDate = $checkOutDate;
     }
+
+    public function getCheckInDate() {
+        return $this->checkInDate;
+    }
+
+    public function getCheckOutDate() {
+        return $this->checkOutDate;
+    }
 }
