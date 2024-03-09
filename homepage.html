@@ -1,201 +1,95 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Welcome To Saraly</title> 
-    <link rel="stylesheet" href="style.css"> 
-</head> 
-<body> 
-     
-    <!-- Registration --> 
-     
-    <div id="registerModal" class="modal"> 
-    <div class="modal-content"> 
-        <span class="close">&times;</span> 
-        <h2>Register</h2> 
-        <form id="registerForm"> 
-            <input type="text" placeholder="Username" required> 
-            <input type="email" placeholder="Email" required> 
-            <input type="password" placeholder="Password" required> 
-            <button type="submit">Create Account</button> 
-        </form> 
-    </div> 
-</div> 
- 
-     <!-- نموذج تسجيل -->
-<div>
-    <input type="text" id="username" placeholder="Username">
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="registerUser()">Register</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- نموذج تسجيل الدخول -->
-<div>
-    <input type="email" id="loginEmail" placeholder="Email">
-    <input type="password" id="loginPassword" placeholder="Password">
-    <button onclick="loginUser()">Login</button>
-</div>
-     
-     <!-- Searrrrch -->
-     <section class="search">
-    <input type="text" id="searchInput" placeholder="Search for a hotel...">
-    <button onclick="searchHotels()"> Search</button>
-</section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Safarly</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<section class="results">
-    <div id="hotelList">
-        <!-- Hotel results will be displayed here -->
-    </div>
-</section>
+<body>
 
-     
-     
-     
-    <header> 
-        <div class="container"> 
-            <h1>Safarly</h1> 
-            <nav> 
-                <ul> 
-                    <li><a href="#about">About Safarly</a></li> 
-                    <li><a href="#hotels">Hotels</a></li> 
-                    <li><a href="#contact">Contact Us</a></li> 
-                </ul> 
-            </nav> 
-            <button class="registerBtn">Register</button> 
-        </div> 
-    </header> 
- 
-    <main> 
-        <section id="hero"> 
-            <div class="container"> 
-                <h2>Welcome To SafarLY</h2> 
-                <p>Start your journey with Safarly</p> 
-                <!-- Search engine for hotels can be added here --> 
-            </div> 
-        </section> 
- 
-        <section id="about"> 
-            <div class="container"> 
-                <h2>About Safarly</h2> 
-                <p>Information about the company and its services.</p> 
-            </div>
-            
-        </section> 
- 
-        <!-- More sections can be added as needed --> 
-    </main> 
- 
-    <footer> 
-        <div class="container"> 
-            <p>&copy; 2024 Safarly. All rights reserved.</p> 
-        </div> 
-    </footer> 
-     
-   <!-- <script src="script.js"></script> -->
-</body>
-<!DOCTYPE HTML>
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Welcome To Safarly</title> 
-    <link rel="stylesheet" href="styles.css">
-</head> 
-<body> 
-    <header> 
-        <div class="container"> 
-            <h1>Safarly</h1> 
-            <nav> 
-                <ul> 
-                    <li><a href="#about">About Safarly</a></li> 
-                    <li><a href="#hotels">Hotels</a></li> 
-                    <li><a href="#contact">Contact Us</a></li> 
-                </ul> 
-            </nav> 
-            <!-- The Register button will now open the modal with the form -->
-            <button class="registerBtn">Register</button> 
-        </div> 
-    </header> 
- 
-    <main> 
-        <section id="hero"> 
-            <div class="container"> 
-                <h2>Welcome To SafarLY</h2> 
-                <p>Start your journey with Safarly</p> 
-            </div> 
-        </section>
-
-        <!-- Registration Modal Updated -->
-        <div id="registerModal" class="modal"> 
-            <div class="modal-content"> 
-                <span class="close">&times;</span> 
-                <h2>Register</h2> 
-                <!-- Registration form updated for PHP backend -->
-                <form action="index.php?action=register" method="post"> 
-                    <input type="text" name="username" placeholder="Username" required> 
-                    <input type="email" name="email" placeholder="Email" required> 
-                    <input type="password" name="password" placeholder="Password" required> 
-                    <button type="submit">Create Account</button> 
-                </form> 
-            </div> 
-        </div> 
-
-        <!-- Registration Form for PHP -->
-        <form action="index.php?action=register" method="post">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Register</button>
-        </form>
-
-        <!-- Login Form for PHP -->
-        <form action="index.php?action=login" method="post">
-            <input type="email" name="loginEmail" placeholder="Email" required>
-            <input type="password" name="loginPassword" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        
-        <!-- Search Section Updated for PHP -->
-        <section class="search">
-            <form action="index.php?action=searchHotels" method="post">
-                <input type="text" name="searchInput" placeholder="Search for a hotel..." required>
-                <button type="submit">Search</button>
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form action="index.php?action=register" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Create Account</button>
             </form>
-        </section>
+        </div>
+    </div>
 
-        <section class="results">
-            <div id="hotelList">
-                <!-- Hotel results will be displayed here by PHP -->
+    <div>
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button onclick="loginUser()">Login</button>
+    </div>
+
+    <section class="search">
+        <form action="index.php?action=searchHotels" method="post">
+            <input type="text" name="searchInput" placeholder="Search for a hotel..." required>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <section class="results">
+        <div id="hotelList">
             </div>
+    </section>
+
+    <header>
+        <div class="container">
+            <h1>Safarly</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Safarly</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="registerBtn">Register</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>Welcomeeeeeeeeeeee To SafarLY</h2>
+                <p>Start your journey with Safarly</p>
+                </div>
         </section>
 
         <section id="about">
-            <!-- Content omitted for brevity -->
+            <div class="container">
+                <h2>About Safarly</h2>
+                <p>Information about the company and its services.</p>
+            </div>
         </section>
 
         <form action="bookHotel.php" method="post">
             <label for="hotelId">Select Hotel:</label>
             <select name="hotelId" id="hotelId">
-                <!-- Assume you fill this with options based on available hotels -->
                 <option value="1">Hotel 1</option>
                 <option value="2">Hotel 2</option>
-                <!-- Add more hotels here -->
-            </select>
+                </select>
             <label for="checkInDate">Check-in Date:</label>
             <input type="date" id="checkInDate" name="checkInDate">
             <label for="checkOutDate">Check-out Date:</label>
             <input type="date" id="checkOutDate" name="checkOutDate">
             <button type="submit">Book Hotel</button>
-        
         </form>
-    </main> 
- 
-    <footer> 
-        <div class="container"> 
-            <p>&copy; 2024 Safarly. All rights reserved.</p> 
-        </div> 
-    </footer> 
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Safarly. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
+
 </html>

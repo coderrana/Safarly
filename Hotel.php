@@ -5,6 +5,7 @@ class Hotel {
     public $location;
     public $price;
      public $ratings = [];
+     private $travelBlogs = [];
 
     public function __construct($name, $location, $price) {
         $this->name = $name;
@@ -25,4 +26,13 @@ public function getAverageRating() {
     }
     return round(array_sum($this->ratings) / count($this->ratings), 2);
 }
+
+    public function addTravelBlog(TravelBlog $blog) {
+        $this->travelBlogs[] = $blog;
+    }
+
+    public function getTravelBlogs() {
+        return $this->travelBlogs;
+    }
+
 }
