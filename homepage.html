@@ -190,16 +190,6 @@
             <button type="submit">Book Hotel</button>
         
         </form>
-        <!-- Display travel blogs on the website -->
-<div class="travel-blogs">
-    <h2>Travel Blogs</h2>
-    <?php foreach ($hotel->getTravelBlogs() as $blog): ?>
-        <div class="blog">
-            <h3><?= $blog->getTitle(); ?></h3>
-            <p><?= $blog->getContent(); ?></p>
-        </div>
-    <?php endforeach; ?>
-</div>
     </main> 
  
     <footer> 

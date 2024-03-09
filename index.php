@@ -67,5 +67,3 @@ switch ($action) {
         echo "Welcome to our hotel booking site!";
         break;
 }
-
-?>
