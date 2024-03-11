@@ -1,10 +1,10 @@
 <?php
-// design pattern applied
-
 class BookingManager {
+    // Array to store Booking objects
     private $bookings = [];
 
-    public function addBooking($booking) {
+    public function addBooking(Booking $booking) {
+        // Ensure the provided object is a Booking instance
         if (!$booking instanceof Booking) {
             throw new Exception("Invalid booking object.");
         }
@@ -17,13 +17,13 @@ class BookingManager {
 
     public function bookRoom($hotelId, $userId, $checkInDate, $checkOutDate) {
         try {
-            // Create a new Booking object
+            // Create a Booking object
             $booking = new Booking($hotelId, $userId, $checkInDate, $checkOutDate);
 
-            // Add the booking to the BookingManager
+            // Add the booking to the manager (Facade Pattern)
             $this->addBooking($booking);
 
-            // Additional booking logic...
+            // Additional booking logic... (e.g., sending notifications, updating hotel availability)
 
             // Display success message or redirect
             return 'Booking successful!';
@@ -33,23 +33,28 @@ class BookingManager {
         }
     }
 
-    public function calculateDynamicPrice(Book $book) {
-        // Your existing dynamic pricing logic goes here
+    public function calculateDynamicPrice(Booking $book) {
         $baseRate = $this->getBaseRate();
         $duration = $this->calculateDuration($book->getCheckInDate(), $book->getCheckOutDate());
+    
+        // Apply discount based on duration
+        if ($duration > 7) {
+            $discountPercentage = 10;
+            $discount = ($discountPercentage / 100) * $baseRate;
+            $baseRate -= $discount; // Apply discount to base rate
+        }
+    
         $finalPrice = $baseRate * $duration;
+    
+        // Apply other promotions (optional)
         $finalPrice = $this->applyPromotions($finalPrice);
-
+    
         return $finalPrice;
     }
-
-    private function getBaseRate() {
-        // Your existing base rate retrieval logic goes here
-        return 100; // Example base rate
-    }
+    
 
     private function calculateDuration($checkInDate, $checkOutDate) {
-        // Your existing duration calculation logic goes here
+        // (Strategy Pattern) Replace with your logic to calculate duration
         $startDate = new DateTime($checkInDate);
         $endDate = new DateTime($checkOutDate);
         $interval = $startDate->diff($endDate);
@@ -58,7 +63,7 @@ class BookingManager {
     }
 
     private function applyPromotions($price) {
-        // Your existing promotion or discount logic goes here
+        // (Strategy Pattern) Replace with your logic to apply promotions
         $discountPercentage = 10; // Example discount
         $discount = ($discountPercentage / 100) * $price;
 

@@ -3,52 +3,58 @@
 require_once 'User.php';
 
 class UserManager {
+    // Array to store user objects
     private $users = [];
+
+    // Path to the data file for storing user data
     private $dataFile = 'users.dat';
 
     public function __construct() {
+        // Load user data from file on initialization
         $this->loadUsers();
     }
 
     private function loadUsers() {
         if (file_exists($this->dataFile)) {
+            // Attempt to unserialize user data from the file
             $this->users = unserialize(file_get_contents($this->dataFile));
         } else {
+            // If file doesn'  t exist, initialize the users array as empty
             $this->users = [];
         }
     }
 
     public function saveUsers() {
+        // Serialize the user data array and write it to the file
         file_put_contents($this->dataFile, serialize($this->users));
     }
 
     public function registerUserFacade($username, $email, $password) {
         try {
-            // Validate user data and perform registration logic
+            // Validate user data before registration
             $this->validateUserData($username, $email, $password);
 
-            // Check if the email already exists
+            // Check for existing email
             foreach ($this->users as $user) {
                 if ($user->email === $email) {
                     throw new Exception("Email already exists.");
                 }
             }
 
-            // Register the user
+            // Create a new User object and register the user
             $this->users[] = new User($username, $email, $password);
             $this->saveUsers();
 
-            // Display success message
             return "User registered successfully!";
         } catch (Exception $e) {
-            // Handle the error gracefully
+            // Handle registration errors gracefully
             return 'Error: ' . $e->getMessage();
         }
     }
 
     public function loginUser($email, $password) {
         foreach ($this->users as $user) {
-            if ($user->email === $email && $user->password === $password) {
+            if ($user->email === $email && password_verify($password, $hashedPassword)) { // Use password_verify for secure comparison
                 return "Login successful!";
             }
         }
@@ -56,11 +62,11 @@ class UserManager {
     }
 
     private function validateUserData($username, $email, $password) {
-        // Implement your validation logic here (e.g., check if the username is unique, validate email format, etc.)
+        // Basic validation for empty fields
         if (empty($username) || empty($email) || empty($password)) {
             throw new Exception("Invalid user data provided.");
         }
 
-        // You can add more validation checks as needed
+        // You can add more validation checks as needed (e.g., email format, password strength)
     }
 }

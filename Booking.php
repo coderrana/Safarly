@@ -1,28 +1,35 @@
 <?php
 class Booking {
 
+// Hotel ID associated with the booking
+public $hotelId;
 
-    public $hotelId;
-    public $userId;
-    public $checkInDate;
-    public $checkOutDate;
+// User ID who made the booking
+public $userId;
 
-    public function __construct($hotelId, $userId, $checkInDate, $checkOutDate) {
-        if (empty($hotelId) || empty($userId) || empty($checkInDate) || empty($checkOutDate)) {
-            throw new Exception("Invalid booking details provided.");
-        }
+// Check-in date for the booking (format can be adjusted as needed)
+public $checkInDate;
 
-        $this->hotelId = $hotelId;
-        $this->userId = $userId;
-        $this->checkInDate = $checkInDate;
-        $this->checkOutDate = $checkOutDate;
+// Check-out date for the booking (format can be adjusted as needed)
+public $checkOutDate;
+
+public function __construct($hotelId, $userId, $checkInDate, $checkOutDate) {
+    // Validate booking details upon object creation
+    if (empty($hotelId) || empty($userId) || empty($checkInDate) || empty($checkOutDate)) {
+        throw new Exception("Invalid booking details provided.");
     }
 
-    public function getCheckInDate() {
-        return $this->checkInDate;
-    }
+    $this->hotelId = $hotelId;
+    $this->userId = $userId;
+    $this->checkInDate = $checkInDate;
+    $this->checkOutDate = $checkOutDate;
+}
 
-    public function getCheckOutDate() {
-        return $this->checkOutDate;
-    }
+public function getCheckInDate() {
+    return $this->checkInDate;
+}
+
+public function getCheckOutDate() {
+    return $this->checkOutDate;
+}
 }

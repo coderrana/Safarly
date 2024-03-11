@@ -39,10 +39,8 @@ class Hotel {
 
     public function bookRoomFacade($userId, $checkInDate, $checkOutDate) {
         try {
-            // Create a new Booking object
+            // (Facade Pattern) Simplified booking process
             $booking = new Booking($this->name, $userId, $checkInDate, $checkOutDate);
-
-            // Add the booking to the BookingManager
             $bookingManager = new BookingManager();
             $bookingManager->addBooking($booking);
 

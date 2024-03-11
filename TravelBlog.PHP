@@ -1,4 +1,5 @@
 <?php
+
 class TravelBlog {
     private $title;
     private $content;
